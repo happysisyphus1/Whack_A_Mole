@@ -11,7 +11,7 @@ public class Driver {
      * precondition: has all of the information necessary to initialize and run the game
      */
     public static void main(String[] args) throws Exception {
-        PlayGame g = new PlayGame();
-        g.playGame();
+        GUI frame = new GUI("frame");
+        frame.setVisible(true);
     }
 }

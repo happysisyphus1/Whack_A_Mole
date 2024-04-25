@@ -50,13 +50,27 @@ public class GUI extends JFrame implements ActionListener{
 
     }
 
-    public static void main(String[] args) {
-        GUI frame = new GUI("frame");
-        frame.setVisible(true);
-    }
-
     @Override
     public void actionPerformed(ActionEvent e) {
         //TODO add code for button behaviors
+        if(e.getActionCommand().equals("0")){
+            System.out.println("0");
+        }
+
+        if(e.getActionCommand().equals("1")){
+            System.out.println("1");
+        }
+
+        if(e.getActionCommand().equals("2")){
+            System.out.println("2");
+        }
+
+        if(e.getActionCommand().equals("3")){
+            System.out.println("3");
+        }
+
+        if(e.getActionCommand().equals("4")){
+            System.out.println("4");
+        }
     }
 }
