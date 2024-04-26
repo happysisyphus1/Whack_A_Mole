@@ -6,6 +6,9 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
+/**
+ * this class handles all GUI components and interactions between the buttons and the user
+ */
 public class GUI extends JFrame implements ActionListener{
     private JLabel stringDisplay;
     private JButton zero;
@@ -13,6 +16,11 @@ public class GUI extends JFrame implements ActionListener{
     private JButton two;
     private JButton three;
     private JButton four;
+
+    /**
+     * constructor which intializes and creates all components of the GUI
+     * @param t string title for the frame of the whole GUI
+     */
 
     public GUI(String t){
         super(t);
@@ -51,6 +59,10 @@ public class GUI extends JFrame implements ActionListener{
     }
 
     @Override
+    /**
+     * method gives all buttons in the program functionality
+     * @param e event action given by the user
+     */
     public void actionPerformed(ActionEvent e) {
         //TODO add code for button behaviors
         if(e.getActionCommand().equals("0")){
