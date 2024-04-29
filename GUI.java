@@ -1,4 +1,5 @@
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -25,31 +26,19 @@ public class GUI extends JFrame implements ActionListener{
     public GUI(String t){
         super(t);
     
-        setSize(200, 200);
+        setSize(400, 400);
         this.setVisible(true);
         setLayout(new FlowLayout());
 
-        stringDisplay = new JLabel("                  _____                  ");
-        add(stringDisplay);
-        zero = new JButton("0");
-        zero.addActionListener(this);
-        add(zero);
-
-        one = new JButton("1");
-        one.addActionListener(this);
-        add(one);
-
-        two = new JButton("2");
-        two.addActionListener(this);
-        add(two);
-
-        three = new JButton("3");
-        three.addActionListener(this);
-        add(three);
-
-        four = new JButton("4");
-        four.addActionListener(this);
-        add(four);
+        JButton[] buttons = new JButton[7];
+        Dimension d = new Dimension(50, 50);
+      
+        for(int i = 0; i < 7; i++){
+            buttons[i] = new JButton("" + i);
+            buttons[i].addActionListener(this);
+            buttons[i].setPreferredSize(d);
+            add(buttons[i]);
+        }
 
 
 
