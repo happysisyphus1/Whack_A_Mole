@@ -13,14 +13,6 @@ import javax.swing.border.Border;
  */
 public class GUI extends JFrame implements ActionListener{
     private JButton[] buttons;
-
-
-    /**
-    * this class makes the button round
-
-    */
-
-
     
     /**
      * constructor which intializes and creates all components of the GUI
@@ -39,18 +31,11 @@ public class GUI extends JFrame implements ActionListener{
       
         for(int i = 0; i < 7; i++){
             buttons[i] = new JButton("" + i);
+            buttons[i].setActionCommand("" + i);
             buttons[i].addActionListener(this);
             buttons[i].setPreferredSize(d);
             add(buttons[i]);
         }
-
-        JButton addBtn = new JButton("");
-        int x_pos = 1;
-        int y_pos= 1;
-        addBtn.setBounds(x_pos, y_pos, 30, 25);
-        addBtn.setBorder(new RoundedBorder(50)); //10 is the radius
-        addBtn.setForeground(Color.BLUE);
-        add(addBtn);
 
 
 
@@ -84,6 +69,14 @@ public class GUI extends JFrame implements ActionListener{
 
         if(e.getActionCommand().equals("4")){
             System.out.println("4");
+        }
+
+        if(e.getActionCommand().equals("5")){
+            System.out.println("5");
+        }
+
+        if(e.getActionCommand().equals("6")){
+            System.out.println("6");
         }
     }
 }
