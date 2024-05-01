@@ -12,12 +12,7 @@ import javax.swing.border.Border;
  * this class handles all GUI components and interactions between the buttons and the user
  */
 public class GUI extends JFrame implements ActionListener{
-    private JLabel stringDisplay;
-    private JButton zero;
-    private JButton one;
-    private JButton two;
-    private JButton three;
-    private JButton four;
+    private JButton[] buttons;
 
 
     /**
@@ -39,7 +34,7 @@ public class GUI extends JFrame implements ActionListener{
         this.setVisible(true);
         setLayout(new FlowLayout());
 
-        JButton[] buttons = new JButton[7];
+        buttons = new JButton[7];
         Dimension d = new Dimension(50, 50);
       
         for(int i = 0; i < 7; i++){
@@ -71,7 +66,7 @@ public class GUI extends JFrame implements ActionListener{
      */
     public void actionPerformed(ActionEvent e) {
         //TODO add code for button behaviors
-        if(e.getActionCommand().equals("")){
+        if(e.getActionCommand().equals("0")){
             System.out.println("0");
         }
 
