@@ -18,6 +18,43 @@ public class GUI extends JFrame implements ActionListener{
     private JButton three;
     private JButton four;
 
+
+    /**
+    * this class makes the button round
+    */
+    JButton addBtn = new JButton("+");
+    addBtn.setBounds(x_pos, y_pos, 30, 25);
+    addBtn.setBorder(new RoundedBorder(10)); //10 is the radius
+    addBtn.setForeground(Color.BLUE);
+    addBtn.setBorder(new RoundedBorder(10));
+
+private static class RoundedBorder implements Border {
+
+    private int radius;
+
+
+    RoundedBorder(int radius) {
+        this.radius = radius;
+    }
+
+
+    public Insets getBorderInsets(Component c) {
+        return new Insets(this.radius+1, this.radius+1, this.radius+2, this.radius);
+    }
+
+
+    public boolean isBorderOpaque() {
+        return true;
+    }
+
+
+    public void paintBorder(Component c, Graphics g, int x, int y, int width, int height) {
+        g.drawRoundRect(x, y, width-1, height-1, radius, radius);
+    }
+}
+
+
+    
     /**
      * constructor which intializes and creates all components of the GUI
      * @param t string title for the frame of the whole GUI
