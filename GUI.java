@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.border.Border;
 
 /**
  * this class handles all GUI components and interactions between the buttons and the user
@@ -21,37 +22,8 @@ public class GUI extends JFrame implements ActionListener{
 
     /**
     * this class makes the button round
+
     */
-    JButton addBtn = new JButton("+");
-    addBtn.setBounds(x_pos, y_pos, 30, 25);
-    addBtn.setBorder(new RoundedBorder(10)); //10 is the radius
-    addBtn.setForeground(Color.BLUE);
-    addBtn.setBorder(new RoundedBorder(10));
-
-private static class RoundedBorder implements Border {
-
-    private int radius;
-
-
-    RoundedBorder(int radius) {
-        this.radius = radius;
-    }
-
-
-    public Insets getBorderInsets(Component c) {
-        return new Insets(this.radius+1, this.radius+1, this.radius+2, this.radius);
-    }
-
-
-    public boolean isBorderOpaque() {
-        return true;
-    }
-
-
-    public void paintBorder(Component c, Graphics g, int x, int y, int width, int height) {
-        g.drawRoundRect(x, y, width-1, height-1, radius, radius);
-    }
-}
 
 
     
@@ -77,6 +49,14 @@ private static class RoundedBorder implements Border {
             add(buttons[i]);
         }
 
+        JButton addBtn = new JButton("");
+        int x_pos = 1;
+        int y_pos= 1;
+        addBtn.setBounds(x_pos, y_pos, 30, 25);
+        addBtn.setBorder(new RoundedBorder(50)); //10 is the radius
+        addBtn.setForeground(Color.BLUE);
+        add(addBtn);
+
 
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -91,7 +71,7 @@ private static class RoundedBorder implements Border {
      */
     public void actionPerformed(ActionEvent e) {
         //TODO add code for button behaviors
-        if(e.getActionCommand().equals("0")){
+        if(e.getActionCommand().equals("")){
             System.out.println("0");
         }
 
