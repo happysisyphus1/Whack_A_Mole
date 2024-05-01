@@ -38,9 +38,11 @@ public class GUI extends JFrame implements ActionListener{
             buttons[i].setActionCommand("" + i);
             buttons[i].addActionListener(this);
             buttons[i].setPreferredSize(d);
-            add(buttons[i]);
         }
-
+        for (JButton iHT : buttons) {
+            add(iHT);
+        }
+        
         time = new JLabel("Time : ");
         timer = 5;
         add(time);
