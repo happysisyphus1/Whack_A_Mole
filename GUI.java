@@ -13,6 +13,10 @@ import javax.swing.border.Border;
  */
 public class GUI extends JFrame implements ActionListener{
     private JButton[] buttons;
+
+    private int score;
+    private int timer = 0;
+    private JLabel time;
     
     /**
      * constructor which intializes and creates all components of the GUI
@@ -37,11 +41,31 @@ public class GUI extends JFrame implements ActionListener{
             add(buttons[i]);
         }
 
+        time = new JLabel("Time : ");
+        timer = 5;
+        add(time);
 
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
 
+    }
+
+    public void timer(){
+        if(timer == 0){
+            return;
+        }
+        long t = System.currentTimeMillis();
+
+        long end =  t + 1 * 1000;
+
+
+        while(System.currentTimeMillis() < end){
+            time.setText("Time : " + timer);
+        }
+        timer--;
+
+        timer();
     }
 
     @Override

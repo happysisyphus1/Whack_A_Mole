@@ -13,5 +13,6 @@ public class Driver {
     public static void main(String[] args) throws Exception {
         GUI frame = new GUI("frame");
         frame.setVisible(true);
+        frame.timer();
     }
 }
